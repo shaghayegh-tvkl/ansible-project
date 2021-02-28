@@ -1,0 +1,4 @@
+- name: Add nodes
+  community.docker.docker_swarm:
+    state: join
+    join_token: swarm_facts['JoinTokens']['Worker']
