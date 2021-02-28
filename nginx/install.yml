@@ -1,0 +1,22 @@
+- name: Add Nginx Repository
+  apt_repository:
+    repo: ppa:nginx/stable
+    state: present
+
+- name: Install Nginx
+  apt:
+    pkg: nginx
+    state: present
+    update_cache: true
+  notify:
+    - Start Nginx
+
+- name: Enable ufw access for Nginx Full
+  ufw:
+    rule: allow
+    name: "Nginx Full"
+
+- name: Start Nginx
+  service:
+    name: nginx
+    state: started
