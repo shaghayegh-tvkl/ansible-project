@@ -17,9 +17,6 @@
 #   pip:
 #     name: docker-py
 #     state: present
-- name: Print the var
-  debug:
-    msg: "This is my var {{SWARM['swarm_facts']['JoinTokens']['Manager']}}"
 - name: Add nodes
   community.docker.docker_swarm:
     state: join

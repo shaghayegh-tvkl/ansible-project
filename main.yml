@@ -29,6 +29,10 @@
       include: ./dockerswarm/manager.yml
       when: "'manager' in group_names"
 
+    - name: Print the var
+      debug:
+        msg: "This is my var {{SWARM['swarm_facts']['JoinTokens']['Manager']}}"
+        
     - name: Setup a Docker Swarm Worker
       community.docker.docker_swarm:
         state: join
