@@ -13,14 +13,11 @@
       include: ./docker/ubuntu.yml
       when: (ansible_facts['distribution'] == "Ubuntu")
   
-    - name: install certain python modules for docker
+    - name: Install certain python modules for docker
       pip:
-        name: "{{ item.name }}"
+        name: docker-py
         state: present
-      with_items:
-      - { name: docker }
-      - { name: docker-py }
-    
+
   handlers:
     - name: restart docker
       service: 
