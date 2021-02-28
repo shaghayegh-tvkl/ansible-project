@@ -26,11 +26,10 @@
   tasks:
     - name: Setup a Docker Swarm
       include: ./dockerswarm/manager.yml
-  register: SWARM
-
-- name: debug
-  debug:
-    msg: "This is my var {{ SWARM }}"
+      register: SWARM
+    - name: debug
+      debug:
+        msg: "This is my var {{ SWARM }}"
 
 # - name: Add Worker Nodes To Docker Swarm
 #   hosts:
