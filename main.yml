@@ -50,6 +50,9 @@
     - name: Install Nginx on Ubuntu
       include: ./nginx/install.yml
       when: (ansible_facts['distribution'] == "Ubuntu")
-
-
+  handlers:
+    - name: Start Nginx
+      service:
+        name: nginx
+        state: started
 ...
