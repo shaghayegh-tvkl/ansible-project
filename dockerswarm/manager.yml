@@ -13,9 +13,6 @@
     name: python-setuptools
     update_cache: yes
     state: present
-- name: Set Enviroment Var
-  environment:
-    PYTHONPATH : "/home/path/.local/lib/python2.7/site-packages"
 - name: Install docker-py
   pip:
     name: docker-py
