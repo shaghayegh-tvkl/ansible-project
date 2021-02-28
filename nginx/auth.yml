@@ -3,6 +3,10 @@
 #     name: python-pip
 #     update_cache: yes
 #     state: present
+- name: Force upgrade pip
+  pip: 
+    name: pip
+    extra_args: --upgrade
 # - name: Install python-setuptools
 #   package:
 #     name: python-setuptools
