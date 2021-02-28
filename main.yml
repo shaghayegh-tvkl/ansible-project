@@ -32,6 +32,7 @@
       add_host:
         name: "servers"
         TOKEN: "{{SWARM['swarm_facts']['JoinTokens']['Manager']}}"
+      when: "'servers' in group_names"
 
     - name: Setup a Docker Swarm Worker
       include: ./dockerswarm/worker.yml
