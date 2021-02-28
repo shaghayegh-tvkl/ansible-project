@@ -1,21 +1,29 @@
-- name: Install epel-releasep
+- name: Install epel-release
   yum:
     name: "epel-release"
     state: latest
   when: (ansible_facts['distribution'] == "CentOS")
+
 - name: Install pip
   package:
     name: python-pip
     update_cache: yes
     state: present
+- name: install the package, force upgrade
+  pip:
+    name: pip
+    executable: pip3
+    state: latest
 - name: Install certain python modules for docker
   pip:
     name: setuptools
     state: present
+
 - name: Install certain python modules for docker
   pip:
     name: docker-py
     state: present
+
 - name: Add nodes
   community.docker.docker_swarm:
     state: join
