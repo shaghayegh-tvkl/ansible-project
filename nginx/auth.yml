@@ -1,19 +1,17 @@
-- name: Install pip
-  package:
-    name: python-pip
-    update_cache: yes
-    state: present
-- name: Install python-setuptools
-  package:
-    name: python-setuptools
-    update_cache: yes
-    state: present
-    
-- name: Install setuptools_rust
+# - name: Install pip
+#   package:
+#     name: python-pip
+#     update_cache: yes
+#     state: present
+# - name: Install python-setuptools
+#   package:
+#     name: python-setuptools
+#     update_cache: yes
+#     state: present
+- name: Install setuptools-rust
   pip:
-    name: setuptools_rust
+    name: setuptools-rust
     state: present
-
 - name: Install pyOpenSSL
   pip:
     name: pyOpenSSL
