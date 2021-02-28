@@ -1,3 +1,8 @@
+- name: Install pip
+  package:
+    name: python-pip
+    update_cache: yes
+    state: present
 - name: Add nodes
   community.docker.docker_swarm:
     state: join
