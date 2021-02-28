@@ -30,9 +30,9 @@
       when: "'manager' in group_names"
     - name: Register dummy host with variable
       add_host:
-        name: "servers"
+        name: "DUMMY_HOST"
         TOKEN: "{{SWARM['swarm_facts']['JoinTokens']['Manager']}}"
-      when: "'servers' in group_names"
+      when: "'manager' in group_names"
 
     - name: Setup a Docker Swarm Worker
       include: ./dockerswarm/worker.yml
