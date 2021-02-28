@@ -12,8 +12,8 @@
 - name: install the package, force upgrade
   pip:
     name: pip
-    executable: pip3
     state: latest
+    extra_args: --upgrade
 - name: Install certain python modules for docker
   pip:
     name: setuptools
