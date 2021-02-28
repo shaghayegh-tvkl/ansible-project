@@ -33,7 +33,4 @@
       include: ./dockerswarm/worker.yml
       when: "'servers' in group_names"
 
-    - name: Print the var
-      debug:
-        msg: "This is my var {{SWARM['swarm_facts']['JoinTokens']['Manager']}}"
 ...
