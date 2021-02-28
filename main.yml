@@ -27,11 +27,11 @@
   tasks:
     - name: Setup a Docker Swarm Manager
       include: ./dockerswarm/manager.yml
-      when: "'manager' in {{group_names}}"
+      when: ('manager' in {{group_names}})
 
     - name: Setup a Docker Swarm Worker
       include: ./dockerswarm/worker.yml
-      when: "'servers' in {{group_names}}"
+      when: ('servers' in {{group_names}})
 
     - name: Print the var
       debug:
