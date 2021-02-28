@@ -30,7 +30,10 @@
       when: "'manager' in group_names"
 
     - name: Setup a Docker Swarm Worker
-      include: ./dockerswarm/worker.yml
+      community.docker.docker_swarm:
+        state: join
+        join_token: "{{SWARM['swarm_facts']['JoinTokens']['Manager']}}"
+        remote_addrs: [ 'dispatcher:2377' ]
       when: "'servers' in group_names"
 
 ...
