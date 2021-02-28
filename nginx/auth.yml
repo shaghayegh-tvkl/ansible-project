@@ -18,4 +18,3 @@
     path: /etc/ssl/certs/nginx-selfsigned.crt
     privatekey_path: /etc/ssl/private/nginx-selfsigned.key
     provider: selfsigned
-

@@ -15,8 +15,3 @@
   ufw:
     rule: allow
     name: "Nginx Full"
-
-- name: Start Nginx
-  service:
-    name: nginx
-    state: started

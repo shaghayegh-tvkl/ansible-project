@@ -47,9 +47,18 @@
     - manager
   remote_user: root
   tasks:
-    - name: Install Nginx on Ubuntu
-      include: ./nginx/install.yml
+    # - name: Install Nginx on Ubuntu
+    #   include: ./nginx/install.yml
+    #   when: (ansible_facts['distribution'] == "Ubuntu")
+    
+    - name: Create Keys and Passwords for Nginx on Ubuntu
+      include: ./nginx/auth.yml
       when: (ansible_facts['distribution'] == "Ubuntu")
+    
+    - name: Configure Nginx  
+      include: ./nginx/config.yml
+      when: (ansible_facts['distribution'] == "Ubuntu")
+    
   handlers:
     - name: Start Nginx
       service:
