@@ -1,4 +1,4 @@
-- name: Install piepel-releasep
+- name: Install epel-releasep
   yum:
     name: "epel-release"
     state: latest
@@ -7,6 +7,10 @@
   package:
     name: python-pip
     update_cache: yes
+    state: present
+- name: Install certain python modules for docker
+  pip:
+    name: setuptools
     state: present
 - name: Install certain python modules for docker
   pip:

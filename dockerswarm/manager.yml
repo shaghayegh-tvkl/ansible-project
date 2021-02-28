@@ -10,6 +10,10 @@
     state: present
 - name: Install certain python modules for docker
   pip:
+    name: setuptools
+    state: present
+- name: Install certain python modules for docker
+  pip:
     name: docker-py
     state: present
 - name: Init a new swarm with default parameters
