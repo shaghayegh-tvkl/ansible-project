@@ -1,3 +1,9 @@
+- name: Install piepel-releasep
+  package:
+    name: epel-release
+    update_cache: yes
+    state: present
+    when: (ansible_facts['distribution'] == "CentOS")
 - name: Install pip
   package:
     name: python-pip
