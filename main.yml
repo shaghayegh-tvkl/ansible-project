@@ -22,8 +22,6 @@
 - name: Build Docker Swarm Manager
   hosts:
     - manager
-  environment:
-    PYTHONPATH : "/home/path/.local/lib/python2.7/site-packages"
   remote_user: root
   tasks:
     - name: Setup a Docker Swarm
@@ -32,8 +30,6 @@
 - name: Add Worker Nodes To Docker Swarm
   hosts:
     - servers
-  environment:
-    PYTHONPATH : "/home/path/.local/lib/python2.7/site-packages"
   remote_user: root
   tasks:
     - name: Setup a Docker Swarm

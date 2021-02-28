@@ -8,6 +8,11 @@
     name: python-pip
     update_cache: yes
     state: present
+- name: Install python apt
+  package:
+    name: python-apt
+    update_cache: yes
+    state: present
 - name: Install python-setuptools
   package:
     name: python-setuptools
