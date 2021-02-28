@@ -10,14 +10,14 @@
     update_cache: yes
     state: present
 - name: Install certain python modules for docker
-  pip:
-    name: pkg_resources
+  package:
+    name: python-setuptools
+    update_cache: yes
     state: present
 - name: Install certain python modules for docker
   pip:
     name: setuptools
     state: present
-
 - name: Install certain python modules for docker
   pip:
     name: docker-py
