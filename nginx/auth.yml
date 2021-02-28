@@ -8,9 +8,10 @@
 #     name: python-setuptools
 #     update_cache: yes
 #     state: present
-- name: Install cryptography
-  pip:
-    name: cryptography
+- name: Install python-setuptools-rust
+  package:
+    name: python-setuptools-rust
+    update_cache: yes
     state: present
 - name: Install pyOpenSSL
   pip:
