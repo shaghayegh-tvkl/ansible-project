@@ -1,23 +1,31 @@
 ---
-# - name: Install Docker
-#   hosts:
-#     - manager
-#     - servers
-#   remote_user: root
-#   tasks:
-#     - name: Install Docker on CentOS 7
-#       include: ./docker/centos.yml
-#       when: (ansible_facts['distribution'] == "CentOS")
+- name: Install Docker
+  hosts:
+    - manager
+    - servers
+  remote_user: root
+  tasks:
+    - name: Install Docker on CentOS 7
+      include: ./docker/centos.yml
+      when: (ansible_facts['distribution'] == "CentOS")
 
-#     - name: Install Docker on Ubuntu
-#       include: ./docker/ubuntu.yml
-#       when: (ansible_facts['distribution'] == "Ubuntu")
+    - name: Install Docker on Ubuntu
+      include: ./docker/ubuntu.yml
+      when: (ansible_facts['distribution'] == "Ubuntu")
+  
+    - name: install certain python modules for docker
+      pip:
+        name: "{{ item.name }}"
+        state: present
+      with_items:
+      - { name: docker }
+      - { name: docker-py }
     
-#   handlers:
-#     - name: restart docker
-#       service: 
-#         name: docker 
-#         state: restarted
+  handlers:
+    - name: restart docker
+      service: 
+        name: docker 
+        state: restarted
 
 - name: Build Docker Swarm Manager
   hosts:
@@ -34,5 +42,4 @@
   tasks:
     - name: Setup a Docker Swarm
       include: ./dockerswarm/manager.yml
-
 ...
