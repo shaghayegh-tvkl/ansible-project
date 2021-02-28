@@ -33,5 +33,5 @@
   remote_user: root
   tasks:
     - name: Setup a Docker Swarm
-      include: ./dockerswarm/manager.yml
+      include: ./dockerswarm/worker.yml
 ...
