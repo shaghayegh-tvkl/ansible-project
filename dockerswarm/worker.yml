@@ -16,7 +16,6 @@
 - name: Install docker-py
   pip:
     name: docker-py
-    version: 1.10.6
     state: present
 - name: Add nodes
   community.docker.docker_swarm:

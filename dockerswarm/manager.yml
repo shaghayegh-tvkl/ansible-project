@@ -16,7 +16,6 @@
 - name: Install docker-py
   pip:
     name: docker-py
-    version: 1.10.6
     state: present
 - name: Init a new swarm with default parameters
   community.docker.docker_swarm:
