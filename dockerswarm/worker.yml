@@ -20,5 +20,5 @@
 - name: Add nodes
   community.docker.docker_swarm:
     state: join
-    join_token: SWARM['swarm_facts']['JoinTokens']['Manager']
+    join_token: "{{SWARM['swarm_facts']['JoinTokens']['Manager']}}"
     remote_addrs: [ 'dispatcher:2377' ]
