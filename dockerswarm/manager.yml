@@ -3,18 +3,17 @@
     name: "epel-release"
     state: latest
   when: (ansible_facts['distribution'] == "CentOS")
-
 - name: Install pip
   package:
     name: python-pip
     update_cache: yes
     state: present
-- name: Install certain python modules for docker
+- name: Install python-setuptools
   package:
     name: python-setuptools
     update_cache: yes
     state: present
-- name: Install certain python modules for docker
+- name: Install docker-py
   pip:
     name: docker-py
     state: present
