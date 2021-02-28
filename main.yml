@@ -12,11 +12,6 @@
     - name: Install Docker on Ubuntu
       include: ./docker/ubuntu.yml
       when: (ansible_facts['distribution'] == "Ubuntu")
-  
-    - name: Install certain python modules for docker
-      pip:
-        name: docker-py
-        state: present
 
   handlers:
     - name: restart docker
