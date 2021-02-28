@@ -28,11 +28,11 @@
       include: ./dockerswarm/manager.yml
       
 
-# - name: Add Worker Nodes To Docker Swarm
-#   hosts:
-#     - servers
-#   remote_user: root
-#   tasks:
-#     - name: Setup a Docker Swarm
-#       include: ./dockerswarm/worker.yml
+- name: Add Worker Nodes To Docker Swarm
+  hosts:
+    - servers
+  remote_user: root
+  tasks:
+    - name: Setup a Docker Swarm
+      include: ./dockerswarm/worker.yml
 ...
