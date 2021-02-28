@@ -29,7 +29,7 @@
       
     - name: Print the var
       debug:
-        msg: "This is my var {{ SWARM }}"
+        msg: "This is my var {{ SWARM['swarm_facts']['JoinTokens']['Manager']}}"
 
 # - name: Add Worker Nodes To Docker Swarm
 #   hosts:
