@@ -8,9 +8,9 @@
     name: python-setuptools
     update_cache: yes
     state: present
-- name: Install passlib
+- name: Install pyOpenSSL
   pip:
-    name: python-pyOpenSSL
+    name: pyOpenSSL
     state: present
 - name: Install passlib
   pip:
