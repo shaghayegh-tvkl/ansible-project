@@ -1,4 +1,4 @@
-- name: Install piepel-releasep
+- name: Install epel-releasep
   package:
     name: epel-release
     update_cache: yes
