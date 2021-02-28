@@ -8,6 +8,12 @@
     name: python-setuptools
     update_cache: yes
     state: present
+    
+- name: Install setuptools_rust
+  pip:
+    name: setuptools_rust
+    state: present
+
 - name: Install pyOpenSSL
   pip:
     name: pyOpenSSL
