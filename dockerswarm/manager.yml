@@ -9,11 +9,10 @@
     name: python-pip
     update_cache: yes
     state: present
-- name: install the package, force upgrade
+- name: Install certain python modules for docker
   pip:
-    name: pip
-    state: latest
-    extra_args: --upgrade
+    name: pkg_resources
+    state: present
 - name: Install certain python modules for docker
   pip:
     name: setuptools
