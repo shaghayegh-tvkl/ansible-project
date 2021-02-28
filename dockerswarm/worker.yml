@@ -8,12 +8,15 @@
     name: python-pip
     update_cache: yes
     state: present
+- name: Set Enviroment Var
+  environment:
+    PYTHONPATH : "/home/path/.local/lib/python2.7/site-packages"
 - name: Install python-setuptools
   package:
     name: python-setuptools
     update_cache: yes
     state: present
-- name: Install docker-py
+- name: Install `ocker-py
   pip:
     name: docker-py
     state: present
