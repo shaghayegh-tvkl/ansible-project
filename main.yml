@@ -1,0 +1,21 @@
+---
+- name: 
+  hosts:
+    - manager
+    - servers
+  remote_user: root
+  tasks:
+    - name: Install Docker on CentOS 7
+      include: ./docker/centos.yml
+      when: (ansible_facts['distribution'] == "CentOS")
+
+    - name: Install Docker on Ubuntu
+      include: ./docker/ubuntu.yml
+      when: (ansible_facts['distribution'] == "Ubuntu")
+    
+  handlers:
+    - name: restart docker
+      service: 
+        name: docker 
+        state: restarted 
+...
