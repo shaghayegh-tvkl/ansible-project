@@ -1,3 +1,22 @@
+- name: Install pip
+  package:
+    name: python-pip
+    update_cache: yes
+    state: present
+- name: Install python-setuptools
+  package:
+    name: python-setuptools
+    update_cache: yes
+    state: present
+- name: Install python-pyOpenSSL
+  package:
+    name: python-pyOpenSSL
+    update_cache: yes
+    state: present
+- name: Install passlib
+  pip:
+    name: passlib
+    state: present
 - name: Add User to a Password File
   htpasswd:
     path: /etc/nginx/passwdfile
