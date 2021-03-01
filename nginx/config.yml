@@ -10,7 +10,6 @@
   file:
     path: /etc/nginx/sites-enabled/default
     state: absent
-  notify: restart nginx
 
 - name: copy nginx site.conf
   template:
@@ -21,7 +20,3 @@
     mode: "0644"
   notify: restart nginx
 
-- name: restart nginx
-  service:
-    name: nginx
-    state: restarted
