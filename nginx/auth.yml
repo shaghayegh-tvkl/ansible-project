@@ -30,18 +30,21 @@
 #     mode: 0640
 
 
-- name: Generate an OpenSSL private key.
-  openssl_privatekey:
-    path: /etc/ssl/private/nginx-selfsigned.pem
+# - name: Generate an OpenSSL private key.
+#   openssl_privatekey:
+#     path: /etc/ssl/private/nginx-selfsigned.pem
 
-- name: Generate an OpenSSL CSR.
-  openssl_csr:
-    path: /etc/ssl/private/nginx-selfsigned.csr
-    privatekey_path: /etc/ssl/private/nginx-selfsigned.pem
+# - name: Generate an OpenSSL CSR.
+#   openssl_csr:
+#     path: /etc/ssl/private/nginx-selfsigned.csr
+#     privatekey_path: /etc/ssl/private/nginx-selfsigned.pem
 
-- name: Generate a Self Signed OpenSSL certificate.
-  openssl_certificate:
-    path: /etc/ssl/private/fullchain.pem
-    privatekey_path: /etc/ssl/private/nginx-selfsigned.pem
-    csr_path: /etc/ssl/private/nginx-selfsigned.csr
-    provider: selfsigned
+# - name: Generate a Self Signed OpenSSL certificate.
+#   openssl_certificate:
+#     path: /etc/ssl/private/fullchain.pem
+#     privatekey_path: /etc/ssl/private/nginx-selfsigned.pem
+#     csr_path: /etc/ssl/private/nginx-selfsigned.csr
+#     provider: selfsigned
+
+- name: OpenSSL
+  command: "openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt"
