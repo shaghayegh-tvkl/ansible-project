@@ -1,25 +1,17 @@
-# - name: Install pip
-#   package:
-#     name: python-pip
-#     update_cache: yes
-#     state: present
-- name: Force upgrade pip
-  pip: 
-    name: pip
-    extra_args: --upgrade
-# - name: Install python-setuptools
-#   package:
-#     name: python-setuptools
-#     update_cache: yes
-#     state: present
+- name: Install pip
+  package:
+    name: python-pip
+    update_cache: yes
+    state: present
+- name: Install python-setuptools
+  package:
+    name: python-setuptools
+    update_cache: yes
+    state: present
 - name: Install setuptools-rust
   pip:
     name: setuptools-rust
     state: present
-- name: Force upgrade setuptools
-  pip: 
-    name: setuptools
-    extra_args: --upgrade
 - name: Install pyOpenSSL
   pip:
     name: pyOpenSSL
