@@ -3,6 +3,13 @@
     username: shaghayeghtvkl
     password: Sh.Tv!=)13771377
 
+- name: Give insecure permissions to an existing file
+  ansible.builtin.file:
+    path: /home/ubuntu/ansible-project/app/files/mag
+    owner: root
+    group: root
+    mode: '1777'
+
 - name: Build The Mag Image
   community.docker.docker_image:
     build:
