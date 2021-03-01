@@ -1,42 +1,42 @@
-- name: Install pip
-  package:
-    name: python-pip
-    update_cache: yes
-    state: present
-- name: Install python-setuptools
-  package:
-    name: python-setuptools
-    update_cache: yes
-    state: present
-- name: Install setuptools-rust
-  pip:
-    name: setuptools-rust
-    state: present
-- name: Install pyOpenSSL
-  pip:
-    name: pyOpenSSL
-    state: present
-- name: Install passlib
-  pip:
-    name: passlib
-    state: present
-- name: Add User to a Password File
-  htpasswd:
-    path: /etc/nginx/passwdfile
-    name: tavakoli
-    password: '1234'
-    owner: root
-    group: www-data
-    mode: 0640
+# - name: Install pip
+#   package:
+#     name: python-pip
+#     update_cache: yes
+#     state: present
+# - name: Install python-setuptools
+#   package:
+#     name: python-setuptools
+#     update_cache: yes
+#     state: present
+# - name: Install setuptools-rust
+#   pip:
+#     name: setuptools-rust
+#     state: present
+# - name: Install pyOpenSSL
+#   pip:
+#     name: pyOpenSSL
+#     state: present
+# - name: Install passlib
+#   pip:
+#     name: passlib
+#     state: present
+# - name: Add User to a Password File
+#   htpasswd:
+#     path: /etc/nginx/passwdfile
+#     name: tavakoli
+#     password: '1234'
+#     owner: root
+#     group: www-data
+#     mode: 0640
 
-# - name: Create self-signed certificate, if configured.
-#   command: >
-#      openssl req -x509 -nodes -days 365 -newkey rsa:2048 
-#      -keyout /etc/ssl/private/nginx-selfsigned.key 
-#      -out /etc/ssl/certs/nginx-selfsigned.crt
+- name: Create self-signed certificate, if configured.
+  command: >
+     openssl req -x509 -nodes -days 365 -newkey rsa:2048 
+     -keyout /etc/ssl/private/nginx-selfsigned.key 
+     -out /etc/ssl/certs/nginx-selfsigned.crt
 
-- name: Generate a Self Signed OpenSSL certificate
-  openssl_certificate:
-    path: /etc/ssl/certs/nginx-selfsigned.crt
-    privatekey_path: /etc/ssl/private/nginx-selfsigned.key
-    provider: selfsigned
+# - name: Generate a Self Signed OpenSSL certificate
+#   openssl_certificate:
+#     path: /etc/ssl/certs/nginx-selfsigned.crt
+#     privatekey_path: /etc/ssl/private/nginx-selfsigned.key
+#     provider: selfsigned
