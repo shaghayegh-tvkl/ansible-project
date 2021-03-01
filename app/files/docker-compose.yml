@@ -22,7 +22,7 @@ services:
        - db
      image: wordpress:latest
      ports:
-       - "8000:80"
+       - "8002:80"
      restart: always
      environment:
        WORDPRESS_DB_HOST: db:3306
@@ -40,7 +40,7 @@ services:
    mag:
      image: shaghayegh-mag:1.0
      ports:
-       - "80:5000"
+       - "8003:5000"
      restart: always
      deploy:
        placement:
@@ -51,7 +51,7 @@ services:
    blog:
      image: shaghayegh-blog:1.0
      ports:
-       - "80:5000"
+       - "8004:5000"
      restart: always
      deploy:
        placement:
