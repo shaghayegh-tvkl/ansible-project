@@ -42,11 +42,11 @@
 
 # ------------------------------------------------------------------------------
 
-# - name: Install Nginx on manager
-#   hosts:
-#     - manager
-#   remote_user: root
-#   tasks:
+- name: Install Nginx on manager
+  hosts:
+    - manager
+  remote_user: root
+  tasks:
 #     # - name: Install Nginx on Ubuntu
 #     #   include: ./nginx/install.yml
 #     #   when: (ansible_facts['distribution'] == "Ubuntu")
@@ -55,20 +55,20 @@
 #     #   include: ./nginx/auth.yml
 #     #   when: (ansible_facts['distribution'] == "Ubuntu")
     
-#     - name: Configure Nginx  
-#       include: ./nginx/config.yml
-#       when: (ansible_facts['distribution'] == "Ubuntu")
+    - name: Configure Nginx  
+      include: ./nginx/config.yml
+      when: (ansible_facts['distribution'] == "Ubuntu")
     
-#   handlers:
-#     - name: Start Nginx
-#       service:
-#         name: nginx
-#         state: started
+  handlers:
+    - name: Start Nginx
+      service:
+        name: nginx
+        state: started
 
-#     - name: Restart Nginx
-#       service:
-#         name: nginx
-#         state: restarted
+    - name: Restart Nginx
+      service:
+        name: nginx
+        state: restarted
 
 - name: Build Docker Images
   hosts:

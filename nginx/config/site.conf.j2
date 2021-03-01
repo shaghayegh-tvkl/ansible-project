@@ -6,15 +6,15 @@ server {
 }
 
 upstream app {
-    server 192.168.72.17:80;
+    server 192.168.72.17:8002;
 }
 
 upstream mag {
-    server 192.168.72.13:80;
+    server 192.168.72.13:8003;
 }
 
 upstream blog {
-    server 192.168.72.30:80;
+    server 192.168.72.30:8004;
 }
 
 server {

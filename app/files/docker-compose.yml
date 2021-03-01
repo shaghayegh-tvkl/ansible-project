@@ -13,9 +13,7 @@ services:
        MYSQL_PASSWORD: wordpress
      deploy:
        placement:
-         constraints: 
-          - node.role == worker
-          - node.hostname == server-1
+         constraints: [node.hostname == server-1]
 
    wordpress:
      depends_on:
@@ -33,9 +31,7 @@ services:
        # mode: replicated
        # replicas: 2
        placement:
-         constraints: 
-          - node.role == worker
-          - node.hostname == server-2
+         constraints: [node.hostname == server-2]
 
    mag:
      image: shaghayegh-mag:1.0
@@ -44,9 +40,7 @@ services:
      restart: always
      deploy:
        placement:
-         constraints: 
-          - node.role == worker
-          - node.hostname == server-3
+         constraints: [node.hostname == server-3]
 
    blog:
      image: shaghayegh-blog:1.0
@@ -55,9 +49,7 @@ services:
      restart: always
      deploy:
        placement:
-         constraints: 
-          - node.role == worker
-          - node.hostname == server-4.novalocal
-          
+         constraints: [node.hostname == server-4.novalocal]
+         
 volumes:
     db_data: {}
