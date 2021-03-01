@@ -2,8 +2,7 @@
   docker_login:
     username: shaghayeghtvkl
     password: Sh.Tv!=)13771377
-  debug: 
-    msg: "This is val {{ login_results }}"
+  register: RESULTS
 
 - name: Build The Blog Image
   docker_image: >
