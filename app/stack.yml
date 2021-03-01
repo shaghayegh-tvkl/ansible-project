@@ -25,4 +25,4 @@
     state: present
     name: mystack
     compose:
-      - ./app/files/docker-compose.yml
+      - /home/ubuntu/ansible-project/app/files/docker-compose.yml
