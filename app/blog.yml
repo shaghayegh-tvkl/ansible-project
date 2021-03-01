@@ -7,11 +7,10 @@
 - name: Build The Blog Image
   community.docker.docker_image:
     build:
-      path: ./files/blog
+      path: ./app/files/blog
     name: shaghayegh-blog
     tag: 1.0
     source: build
-
 
 - name: Tag and Push Blog To DockerHub
   docker_image:

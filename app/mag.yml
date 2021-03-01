@@ -6,7 +6,7 @@
 - name: Build The Mag Image
   community.docker.docker_image:
     build:
-      path: ./files/mag
+      path: ./app/files/mag
     name: shaghayegh-mag
     tag: 1.0
     source: build

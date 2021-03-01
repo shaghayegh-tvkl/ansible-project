@@ -25,4 +25,4 @@
     state: present
     name: mystack
     compose:
-      - ./files/docker-compose.yml
+      - ./app/files/docker-compose.yml
