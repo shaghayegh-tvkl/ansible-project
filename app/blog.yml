@@ -8,10 +8,13 @@
 - name: Build The Blog Image
   community.docker.docker_image:
     build:
-      path: /home/ubuntu/ansible-project/app/files/blog/Dockerfile
+      path: ~/docker/blog/
     name: shaghayegh-blog
     tag: 1.0
     source: build
+
+- name: build the image
+  command: docker build -t built-by-ansible:ex2 /tmp/site
 
 - name: Tag and Push Blog To DockerHub
   docker_image:
