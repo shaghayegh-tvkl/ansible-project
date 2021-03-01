@@ -75,10 +75,10 @@
     - manager
   remote_user: root
   tasks:
-    # - name: Copy Files
-    #   copy:
-    #     src: /home/ubuntu/ansible-project/app/files/
-    #     dest: /home/ubuntu/docker 
+    - name: Copy Files
+      copy:
+        src: /home/ubuntu/ansible-project/app/files/
+        dest: /home/ubuntu/docker 
 
     # - name: Create Mag Docker Image 
     #   include: ./app/mag.yml
