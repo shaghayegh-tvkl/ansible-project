@@ -38,7 +38,6 @@
   openssl_csr:
     path: /etc/ssl/private/nginx-selfsigned.csr
     privatekey_path: /etc/ssl/private/nginx-selfsigned.pem
-    common_name: "{{ server_hostname }}"
 
 - name: Generate a Self Signed OpenSSL certificate.
   openssl_certificate:
