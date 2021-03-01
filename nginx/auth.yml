@@ -29,9 +29,20 @@
 #     group: www-data
 #     mode: 0640
 
-- name: Generate a Self Signed OpenSSL certificate
+
+- name: Generate an OpenSSL private key.
+  openssl_privatekey:
+    path: /etc/ssl/private/nginx-selfsigned.pem
+
+- name: Generate an OpenSSL CSR.
+  openssl_csr:
+    path: /etc/ssl/private/nginx-selfsigned.csr
+    privatekey_path: /etc/ssl/private/nginx-selfsigned.pem
+    common_name: "{{ server_hostname }}"
+
+- name: Generate a Self Signed OpenSSL certificate.
   openssl_certificate:
-    path: /etc/ssl/certs/nginx-selfsigned.crt
-    privatekey_path: /etc/ssl/private/nginx-selfsigned.key
+    path: /etc/ssl/private/fullchain.pem
+    privatekey_path: /etc/ssl/private/nginx-selfsigned.pem
     csr_path: /etc/ssl/private/nginx-selfsigned.csr
     provider: selfsigned
