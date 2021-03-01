@@ -75,12 +75,6 @@
     - manager
   remote_user: root
   tasks:
-    - name: Create Mag Docker Image 
-      include: ./app/mag.yml
-    - name: this is debug
-      debug:
-        msg: "This is Login Results {{RESULTS['login_results']}}"
-
     - name: Give insecure permissions to an existing file
       ansible.builtin.file:
         path: /home/ubuntu/ansible-project/app/files
@@ -88,8 +82,13 @@
         recurse: yes
         owner: root
         group: root
-        mode: '1777'
+        mode: '1777'  
 
+    - name: Create Mag Docker Image 
+      include: ./app/mag.yml
+    - name: this is debug
+      debug:
+        msg: "This is Login Results {{RESULTS['login_results']}}"
     - name: Create Blog Docker Image 
       include: ./app/blog.yml
 
