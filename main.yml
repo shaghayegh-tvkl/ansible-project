@@ -75,16 +75,16 @@
     - manager
   remote_user: root
   tasks:
-    - name: Copy Files
-      copy:
-        src: /home/ubuntu/ansible-project/app/files/
-        dest: /home/ubuntu/docker 
+    # - name: Copy Files
+    #   copy:
+    #     src: /home/ubuntu/ansible-project/app/files/
+    #     dest: /home/ubuntu/docker 
 
-    - name: Create Mag Docker Image 
-      include: ./app/mag.yml
+    # - name: Create Mag Docker Image 
+    #   include: ./app/mag.yml
    
-    - name: Create Blog Docker Image 
-      include: ./app/blog.yml
+    # - name: Create Blog Docker Image 
+    #   include: ./app/blog.yml
 
     - name: Create Docker Swarm stack
       include: ./app/stack.yml 
