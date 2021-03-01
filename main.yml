@@ -75,7 +75,7 @@
     - manager
   remote_user: root
   tasks:
-    - name: Give insecure permissions to an existing directory
+    - name: Copy Files
       copy:
         src: /home/ubuntu/ansible-project/app/files/
         dest: ~/docker/ 
