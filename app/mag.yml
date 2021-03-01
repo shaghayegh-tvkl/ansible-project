@@ -9,7 +9,7 @@
     build:
       path: /home/ubuntu/docker/mag/
     name: shaghayegh-mag
-    tag: 1.0
+    tag: "1.0"
     source: build
 
 
@@ -18,6 +18,6 @@
   docker_image:
     name: shaghayegh-mag
     repository: shaghayeghtvkl/shaghayegh-mag
-    tag: 1.0
+    tag: "1.0"
     push: yes
 

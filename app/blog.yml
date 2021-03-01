@@ -10,7 +10,7 @@
     build:
       path: /home/ubuntu/docker/blog/
     name: shaghayegh-blog
-    tag: 1.0
+    tag: "1.0"
     source: build
 
 - name: build the image
@@ -20,5 +20,5 @@
   docker_image:
     name: shaghayegh-blog
     repository: shaghayeghtvkl/shaghayegh-blog
-    tag: 1.0
+    tag: "1.0"
     push: yes
