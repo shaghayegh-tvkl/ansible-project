@@ -76,7 +76,7 @@
   remote_user: root
   tasks:
     - name: Give insecure permissions to an existing directory
-      ansible.builtin.file:
+      file:
         path: /home/ubuntu/ansible-project/app/files
         state: directory
         recurse: yes
