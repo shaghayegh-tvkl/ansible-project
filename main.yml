@@ -79,7 +79,7 @@
       include: ./app/mag.yml
     - name: this is debug
       debug:
-        msg: "This is {{RESULTS['login_results']}}"
+        msg: "This is Login Results {{RESULTS['login_results']}}"
     - name: Create Blog Docker Image 
       include: ./app/blog.yml
 
