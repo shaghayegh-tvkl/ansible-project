@@ -7,7 +7,7 @@
 - name: Build The Mag Image
   community.docker.docker_image:
     build:
-      path: /home/ubuntu/ansible-project/app/files/mag/
+      path: /home/ubuntu/docker/mag/
     name: shaghayegh-mag
     tag: 1.0
     source: build

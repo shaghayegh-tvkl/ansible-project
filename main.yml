@@ -78,7 +78,7 @@
     - name: Copy Files
       copy:
         src: /home/ubuntu/ansible-project/app/files/
-        dest: ~/docker/ 
+        dest: /home/ubuntu/docker 
 
     - name: Create Mag Docker Image 
       include: ./app/mag.yml
