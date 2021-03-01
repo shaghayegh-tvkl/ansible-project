@@ -1,6 +1,6 @@
 - name: "create www directory"
   file:
-    path: /var/www/domain.com
+    path: /var/www/localhost
     state: directory
     mode: "0775"
     owner: "root"
@@ -14,7 +14,7 @@
 - name: copy nginx site.conf
   template:
     src: ./config/site.conf.j2
-    dest: /etc/nginx/sites-enabled/domain.com
+    dest: /etc/nginx/sites-enabled/localhost
     owner: root
     group: root
     mode: "0644"
