@@ -5,11 +5,13 @@
   register: RESULTS
 
 - name: Build The Blog Image
-  docker_image: >
-    name=shaghayegh-blog
-    tag=1.0
-    build.path=./files/blog
-    state=present
+  community.docker.docker_image:
+    build:
+      path: ./files/blog
+    name: shaghayegh-blog
+    tag: 1.0
+    source: build
+
 
 - name: Tag and Push Blog To DockerHub
   docker_image:
