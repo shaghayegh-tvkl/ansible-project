@@ -28,6 +28,7 @@ server {
 
     server_name 37.152.187.31;
     # root /var/www/37.152.187.31;
+    proxy_set_header Host 37.152.187.31;
 
   location / {
     proxy_pass http://app;
