@@ -12,15 +12,6 @@
     group: www-data
     mode: '0777'
 
-- name: enable rpcbind nfslock nfs
-  service:
-    name: "{{ item }}"
-    enabled: yes
-  with_items:
-    - rpcbind
-    - nfslock
-    - nfs
-
 - name: Copy exports file.
   template:
     src: ./files/exports.j2
