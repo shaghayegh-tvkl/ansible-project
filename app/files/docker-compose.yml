@@ -43,7 +43,7 @@ services:
       mode: replicated
       replicas: 2
       placement:
-        constraints: [node.labels.wp==true]
+        constraints: [node.hostname == server-2 or node.hostname == server-1]
 
   mag:
     image: shaghayeghtvkl/shaghayegh-mag:1.0
