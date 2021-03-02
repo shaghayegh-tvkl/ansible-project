@@ -6,6 +6,7 @@ server {
 }
 
 upstream app {
+    least_conn;
     server 192.168.72.17:8002;
     server 192.168.72.14:8002;
 }
