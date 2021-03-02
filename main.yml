@@ -86,15 +86,15 @@
 
 #------------------------------------------------------------------------------
 
-- name: Build Docker Images
-  hosts:
-    - manager
-  remote_user: root
-  tasks:
-    - name: Copy Files
-      copy:
-        src: /home/ubuntu/ansible-project/app/files/
-        dest: /home/ubuntu/docker 
+# - name: Build Docker Images
+#   hosts:
+#     - manager
+#   remote_user: root
+#   tasks:
+#     - name: Copy Files
+#       copy:
+#         src: /home/ubuntu/ansible-project/app/files/
+#         dest: /home/ubuntu/docker 
 
     # - name: Build up NFS Server
     #   include: ./app/nfs.yml
@@ -111,10 +111,10 @@
     # - name: Create Docker Swarm stack
     #   include: ./app/stack.yml 
    
-    - name: Restart Nginx
-      service:
-        name: nginx
-        state: restarted
+    # - name: Restart Nginx
+    #   service:
+    #     name: nginx
+    #     state: restarted
 
 
 
