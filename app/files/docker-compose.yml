@@ -30,7 +30,7 @@ services:
       - db
     image: shaghayeghtvkl/shaghayegh-wordpress:1.0
     volumes:
-      - wordpress.vol:/var/www/html
+      - 192.168.72.27:/mnt/nfs_share:/var/www/html
     ports:
       - "8002:80"
     restart: always
@@ -40,8 +40,8 @@ services:
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
     deploy:
-      # mode: replicated
-      # replicas: 2
+      mode: replicated
+      replicas: 2
       placement:
         constraints: #[node.hostname == server-3]
           - node.hostname != dispatcher
@@ -68,7 +68,7 @@ services:
         
 volumes:
     db_data:
-    wordpress.vol:
-      driver: nfs
-      driver_opts:
-        share: 192.168.72.27:/mnt/nfs_share
+#     wordpress.vol:
+#       driver: nfs
+#       driver_opts:
+#         share: 192.168.72.27:/mnt/nfs_share
