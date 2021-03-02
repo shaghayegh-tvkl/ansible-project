@@ -7,6 +7,7 @@ server {
 
 upstream app {
     server 192.168.72.17:8002;
+    server 192.168.72.14:8002;
 }
 
 upstream mag {
@@ -43,6 +44,7 @@ server {
   }
   
   location /ali {
+    proxy_pass http://blog;
     add_header arvan-loc ali always;
   }
 }

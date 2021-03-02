@@ -23,6 +23,6 @@
 - name: Deploy stack from a compose file
   community.docker.docker_stack:
     state: present
-    name: mystack
+    name: shtvstack
     compose:
       - /home/ubuntu/docker/docker-compose.yml

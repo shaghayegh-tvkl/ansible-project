@@ -1,0 +1,33 @@
+- name: Install NFS Server
+  package:
+    name: nfs-kernel-server
+    update_cache: yes
+    state: present
+
+- name: Create a mountable directory if it does not exist
+  file:
+    path: /mnt/nfs_share
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: '0777'
+
+- name: enable rpcbind nfslock nfs
+  service:
+    name: "{{ item }}"
+    enabled: yes
+  with_items:
+    - rpcbind
+    - nfslock
+    - nfs
+
+- name: Copy exports file.
+  template:
+    src: ./files/exports.j2
+    dest: /etc/exports
+    owner: root
+    group: root
+    mode: 0644
+
+- name: NFS apply change configrue
+  shell: systemctl reload nfs;exportfs -a
