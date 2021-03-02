@@ -13,11 +13,7 @@ services:
       MYSQL_PASSWORD: wordpress
     deploy:
       placement:
-        constraints: 
-          - node.type == worker
-          - node.hostname != server-3
-          - node.hostname != server-4.novalocal
-          
+        constraints: [node.hostname == server-2] 
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
