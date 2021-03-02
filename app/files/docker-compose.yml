@@ -43,10 +43,8 @@ services:
       mode: replicated
       replicas: 2
       placement:
-        constraints: 
-           - node.hostname != server-4
-           - node.hostname != server-3
-           - node.role == worker
+        constraints: [node.hostname == server-1 || node.hostname == server-2]
+
   mag:
     image: shaghayeghtvkl/shaghayegh-mag:1.0
     ports:
@@ -55,6 +53,7 @@ services:
     deploy:
       placement:
         constraints: [node.hostname == server-3]
+        
   blog:
     image: shaghayeghtvkl/shaghayegh-blog:1.0
     ports:
