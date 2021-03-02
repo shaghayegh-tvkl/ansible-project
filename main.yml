@@ -78,9 +78,10 @@
     - wordpress
   remote_user: root
   tasks:
-    apt: nfs-common
-    state: latest
-    update_cache: yes
+    apt:  
+      name: nfs-common
+      state: latest
+      update_cache: yes
 
 #------------------------------------------------------------------------------
 
