@@ -68,7 +68,6 @@ services:
         
 volumes:
     db_data:
-    volumes:
     wordpress.vol:
       driver: nfs
       driver_opts:
