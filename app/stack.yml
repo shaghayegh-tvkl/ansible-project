@@ -33,3 +33,10 @@
     name: shtvstack
     compose:
       - /home/ubuntu/docker/docker-compose.yml
+
+- name: Merge node labels and new labels
+  command: docker node update --label-add wp=yes server-1
+
+- name: Merge node labels and new labels
+  command: docker node update --label-add wp=yes server-2
+   
