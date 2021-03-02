@@ -44,6 +44,8 @@ services:
       replicas: 2
       placement:
         constraints:
+          - node.hostname != server-3
+          - node.hostname != server-4.novalocal
           - node.type == worker
           
 
