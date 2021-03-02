@@ -20,23 +20,10 @@
   docker_login:
     username: shaghayeghtvkl
     password: Sh.Tv!=)13771377
-
-- name: Merge node labels and new labels
-  command: docker node update --label-add wp=yes server-1
-
-- name: Merge node labels and new labels
-  command: docker node update --label-add wp=yes server-2
-    
+   
 - name: Deploy stack from a compose file
   community.docker.docker_stack:
     state: present
     name: shtvstack
     compose:
       - /home/ubuntu/docker/docker-compose.yml
-
-- name: Merge node labels and new labels
-  command: docker node update --label-add wp=yes server-1
-
-- name: Merge node labels and new labels
-  command: docker node update --label-add wp=yes server-2
-   
