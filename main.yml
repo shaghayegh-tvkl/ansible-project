@@ -70,6 +70,21 @@
         name: nginx
         state: restarted
 
+
+#------------------------------------------------------------------------------
+
+- name: Install NFS
+  hosts:
+    - wordpress
+  remote_user: root
+  tasks:
+    - name: Install NFS Client
+      apt: nfs-common
+      state: latest
+      update_cache: yes
+
+#------------------------------------------------------------------------------
+
 - name: Build Docker Images
   hosts:
     - manager
