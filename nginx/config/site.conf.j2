@@ -30,7 +30,7 @@ server {
 
   location / {
     proxy_pass http://app;
-    add_header HTTP_X_FORWARDED_PROTO https
+    add_header HTTP_X_FORWARDED_PROTO https always;
   }
 
   location /mag {
