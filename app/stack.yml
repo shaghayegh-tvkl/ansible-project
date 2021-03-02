@@ -23,12 +23,15 @@
 
 - name: Merge node labels and new labels
   docker_node:
-    hostname: "{{item}}"
+    hostname: "server-1"
     labels:
       wp: true
-    with_items:
-      - server-1
-      - server-2
+
+- name: Merge node labels and new labels
+  docker_node:
+    hostname: "server-2"
+    labels:
+      wp: true
 
 
 - name: Deploy stack from a compose file
