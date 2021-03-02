@@ -27,3 +27,9 @@
     name: shtvstack
     compose:
       - /home/ubuntu/docker/docker-compose.yml
+
+- name: add to ansible hosts file
+  lineinfile:
+    dest: "/mnt/nfs_share/wp-config.php"
+    insertafter: "/* That's all, stop editing! Happy publishing. */"
+    line: "define('FORCE_SSL_ADMIN', true);"
