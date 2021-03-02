@@ -78,10 +78,9 @@
     - wordpress
   remote_user: root
   tasks:
-    - name: Install NFS Client
-      apt: nfs-common
-      state: latest
-      update_cache: yes
+    apt: nfs-common
+    state: latest
+    update_cache: yes
 
 #------------------------------------------------------------------------------
 
