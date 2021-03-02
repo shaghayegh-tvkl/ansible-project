@@ -40,13 +40,13 @@ services:
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
     deploy:
-      mode: replicated
-      replicas: 2
+      # mode: replicated
+      # replicas: 2
       placement:
-        constraints:
-          - node.hostname != dispatcher
-          - node.hostname != server-3
-          - node.hostname != server-4.novalocal
+        constraints: [node.hostname == server-2]
+          # - node.hostname != dispatcher
+          # - node.hostname != server-3
+          # - node.hostname != server-4.novalocal
 
   mag:
     image: shaghayeghtvkl/shaghayegh-mag:1.0
