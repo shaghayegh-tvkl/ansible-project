@@ -73,16 +73,16 @@
 
 #------------------------------------------------------------------------------
 
-- name: Install NFS
-  hosts: wordpress
-  remote_user: root
+# - name: Install NFS
+#   hosts: wordpress
+#   remote_user: root
 
-  tasks:
-  - name: Installing with apt
-    apt:
-      name: nfs-common
-      state: latest
-      update_cache: yes
+#   tasks:
+#   - name: Installing with apt
+#     apt:
+#       name: nfs-common
+#       state: latest
+#       update_cache: yes
 
 #------------------------------------------------------------------------------
 
@@ -108,8 +108,8 @@
     # - name: Create WordPress Docker Image 
     #   include: ./app/wordpress.yml
 
-    - name: Create Docker Swarm stack
-      include: ./app/stack.yml 
+    # - name: Create Docker Swarm stack
+    #   include: ./app/stack.yml 
    
     - name: Restart Nginx
       service:
