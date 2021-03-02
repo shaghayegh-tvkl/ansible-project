@@ -30,7 +30,7 @@ services:
       - db
     image: shaghayeghtvkl/shaghayegh-wordpress:1.0
     volumes:
-      - 192.168.72.27:/mnt/nfs_share:/var/www/html
+      - wp_data:/var/www/html
     ports:
       - "8002:80"
     restart: always
@@ -68,7 +68,8 @@ services:
         
 volumes:
     db_data:
-#     wordpress.vol:
-#       driver: nfs
-#       driver_opts:
-#         share: 192.168.72.27:/mnt/nfs_share
+    wp_data:
+      driver_opts:
+        type: "nfs"
+        o: "addr=192.168.72.27,nolock,soft,rw"
+        device: ":/mnt/nfs_share"
