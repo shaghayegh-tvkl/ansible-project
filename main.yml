@@ -73,15 +73,6 @@
 
 #------------------------------------------------------------------------------
 
-# - name: Install NFS
-#   hosts: wordpress
-#   remote_user: root
-#   tasks:
-#     - name: Installing with apt
-#          apt:  
-#      name: nfs-common
-#       state: latest
-#       update_cache: yes
 - name: Install NFS
   hosts: wordpress
   remote_user: root
