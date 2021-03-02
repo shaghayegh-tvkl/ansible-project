@@ -22,18 +22,11 @@
     password: Sh.Tv!=)13771377
 
 - name: Merge node labels and new labels
-  community.docker.docker_node:
-    hostname: "server-1"
-    labels:
-      wp: true
+  command: docker node update --label-add wp=true server-1
 
 - name: Merge node labels and new labels
-  community.docker.docker_node:
-    hostname: "server-2"
-    labels:
-      wp: true
-
-
+  command: docker node update --label-add wp=true server-2
+    
 - name: Deploy stack from a compose file
   community.docker.docker_stack:
     state: present
