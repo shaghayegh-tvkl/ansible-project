@@ -29,7 +29,7 @@ server {
     server_name 37.152.187.31;
 
   location / {
-    try_files $uri /app$uri;
+    proxy_pass http://app;
   }
 
   location /mag {
