@@ -47,7 +47,7 @@ server {
   }
 
   location = /database {
-    return 301 http://database;
+    proxy_pass http://database;
   }
 
   # location /database {
