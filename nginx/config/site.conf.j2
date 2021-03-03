@@ -50,7 +50,8 @@ server {
   location /database/ {
     proxy_pass      http://dbAdmin/;
     proxy_redirect  http://dbAdmin/ /database/;
-
+  }
+  
   location /blog {
     proxy_pass http://blog;
   }
