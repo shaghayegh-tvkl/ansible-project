@@ -19,8 +19,8 @@ upstream blog {
     server 192.168.72.30:8004;
 }
 
-upstream database {
-    server 192.168.72.17:8080
+upstream blog {
+    server server 192.168.72.17:8080;
 }
 
 server {
@@ -38,16 +38,16 @@ server {
     proxy_set_header X-Forwarded-Proto $scheme;
     proxy_set_header Host $host;
 
-  location /database {
-    proxy_pass http://database;
-  }
 
-  
   location /mag {
     auth_basic           "Administrator’s Area";
     auth_basic_user_file /etc/nginx/passwdfile;
     proxy_pass http://mag;
 
+  }
+
+  location /database {
+    proxy_pass http://database;
   }
 
   location /blog {
