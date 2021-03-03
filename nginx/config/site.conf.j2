@@ -27,6 +27,13 @@ server {
     ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;
 
     server_name 37.152.187.31;
+
+
+    location ~ /.well-known/acme-challenge {
+        allow all; 
+        root /var/www/html;
+    }
+
     location / {
         try_files $uri @apache;
     }
@@ -74,7 +81,6 @@ server {
         proxy_set_header Host $host;
         proxy_pass http://app;
     }
-
 
   location /mag {
     auth_basic           "Administrator’s Area";
