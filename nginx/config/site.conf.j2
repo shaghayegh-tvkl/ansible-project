@@ -19,7 +19,7 @@ upstream blog {
     server 192.168.72.30:8004;
 }
 
-upstream database { 
+upstream dbAdmin { 
     server 192.168.72.17:8080;
 }
 
@@ -50,6 +50,10 @@ server {
   location = /database {
       return 302 http://37.152.187.51:8080/;
   }
+
+  # location = /database/ {
+  #     proxy_pass http://dbAdmin/;
+  # }
 
   location /blog {
     proxy_pass http://blog;
