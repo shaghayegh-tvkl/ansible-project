@@ -1,6 +1,6 @@
 server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
+    listen 80 37.152.187.31;
+    listen [::]:80 37.152.187.31;
     server_name 37.152.187.31;
     return 302 https://$server_name$request_uri;
 }
@@ -21,8 +21,8 @@ upstream blog {
 
 server {
     # SSL configuration
-    listen 443 ssl http2 default_server;
-    listen [::]:443 ssl http2 default_server;
+    listen 443 ssl http2 37.152.187.31;
+    listen [::]:443 ssl http2 37.152.187.31;
     ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;
     ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;
 
