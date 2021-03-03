@@ -51,7 +51,7 @@ server {
       return 302 /database/;
   }
   location /database/ {
-      proxy_redirect http://database/;  # note the trailing slash here, it matters!
+      proxy_redirect https://37.152.187.31/databse http://database/;  # note the trailing slash here, it matters!
   }
 
   location /blog {
