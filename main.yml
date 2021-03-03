@@ -59,16 +59,16 @@
      include: ./nginx/config.yml
      when: (ansible_facts['distribution'] == "Ubuntu")
     
- handlers:
-   - name: Start Nginx
-     service:
-       name: nginx
-       state: started
+  handlers:
+    - name: Start Nginx
+      service:
+        name: nginx
+        state: started
 
-   - name: Restart Nginx
-     service:
-       name: nginx
-       state: restarted
+    - name: Restart Nginx
+      service:
+        name: nginx
+        state: restarted
 
 
 #------------------------------------------------------------------------------
