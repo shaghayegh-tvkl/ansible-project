@@ -1,0 +1,25 @@
+- name: Set backup_dir and db_dump_name variable
+  set_fact:
+    backup_dir: /tmp/bkups/blog/postgres/db
+    db_dump_name: web_db-{{ ansible_date_time.date }}.bkp
+
+- name: Make sure backup directory exists on the local machine
+  delegate_to: localhost
+  become: no
+  file:
+    state: directory
+    path: "{{ backup_dir }}"
+
+- name: Dump the DB to a bind-mounted volume
+  command: |
+    docker exec -i --user postgres postgres bash -c
+    "pg_dump -Fc web_db > bkups/db/{{ db_dump_name }}"
+
+- name: Fetch the dumped DB from remote to local
+  fetch:
+    src: "{{ backup_dir }}/{{ db_dump_name }}"
+    dest: "{{ backup_dir }}/"
+    flat: yes
+
+
+#    sudo docker ps --format '{{.ID}} {{.Names}}' | grep shtvstack_db | cut -d " " -f1
