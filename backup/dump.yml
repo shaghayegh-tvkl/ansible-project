@@ -2,6 +2,9 @@
   copy:
     src: /home/ubuntu/ansible-project/app/files/dump
     dest: /home/ubuntu/backup
+    owner: root
+    group: root
+    mode: 1777
 
 - name: Ensure backup script runs at 12 00 am
   ansible.builtin.cron:
