@@ -48,12 +48,13 @@ server {
 
 
   location = /database {
-      return 302 http://37.152.187.51:8080/;
+      return 301 http://37.152.187.31:8080/;
   }
 
   # location = /database/ {
   #     proxy_pass http://dbAdmin/;
   # }
+
   location /blog {
     proxy_pass http://blog;
   }
