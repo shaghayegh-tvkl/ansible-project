@@ -1,7 +1,7 @@
 - name: Log into DockerHub
   docker_login:
     username: shaghayeghtvkl
-    password: Sh.Tv!=)13771377
+    password: 
 
 
 - name: Build The Mag Image
